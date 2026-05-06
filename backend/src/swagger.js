@@ -6,15 +6,15 @@ const options = {
     info: {
       title: "Pokemon API",
       version: "1.0.0",
-      description: "API de Pokemones con Express y MySQL"
+      description: "API de Pokemones con PostgreSQL y MongoDB"
     },
     servers: [
       {
-        url: "http://localhost:3000"
+        url: "https://pokemon-app-ciqf.onrender.com"
       }
     ]
   },
-  apis: ["./src/routes/*.js"] // 👈 aquí leerá los comentarios
+  apis: ["./src/routes/*.js"]
 };
 
 const swaggerSpec = swaggerJsDoc(options);

@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
 
 const { connectMongoDB } = require('./config/db.mongodb');
 
@@ -10,6 +12,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// 🔥 Swagger (AHORA SÍ en el lugar correcto)
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // 🔥 conectar Mongo SOLO UNA VEZ
 connectMongoDB();
