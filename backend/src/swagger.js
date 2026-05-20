@@ -10,7 +10,12 @@ const options = {
     },
     servers: [
       {
-        url: "https://pokemon-app-ciqf.onrender.com"
+        url: process.env.API_URL || "http://localhost:3000",
+        description: "Servidor local"
+      },
+      {
+        url: "https://pokemon-app-ciqf.onrender.com",
+        description: "Servidor en la nube (Render)"
       }
     ]
   },
